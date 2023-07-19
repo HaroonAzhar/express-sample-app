@@ -1,11 +1,11 @@
-const { PubSub  } = require("@google-cloud/pubsub");
+import  { PubSub  } from '@google-cloud/pubsub';
 const pubSubClient = new PubSub();
 const subscriptionName = "delivery_sub";
 const timeout = 60;
-const pubsubRepository = require("../repositories/mq-manager");
+import  pubsubRepository from '../repositories/mq-manager.js';
 const { listenForPullMessages } = pubsubRepository;
 
-module.exports = {
+export default {
     deliveryHome: (req, res) => {
         return res.status(200).json({
             success: true,

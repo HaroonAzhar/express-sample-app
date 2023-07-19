@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     publishMessage: async (pubSubClient, topicName, payload) => {
         const dataBuffer = Buffer.from(JSON.stringify(payload));
 

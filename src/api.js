@@ -1,7 +1,9 @@
 import express from 'express';
 import cors from 'cors';
+import  publisherRoutes  from './routes/publisher.js' 
+import  deliveriesRoutes  from './routes/delivery.js' 
 
-const app = express();
+export const app = express();
 
 app.use(cors({ origin: true }));
 
@@ -20,7 +22,10 @@ api.get('/hello', (req, res) => {
   res.status(200).send({ message: 'hello world' });
 });
 
+
+
 // Version the api
 app.use('/api/v1', api);
+app.use('/api/v1/publisher', publisherRoutes);
+app.use('/api/v1/delivery', deliveriesRoutes);
 
-module.exports = app

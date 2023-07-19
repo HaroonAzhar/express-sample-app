@@ -1,13 +1,13 @@
-const { PubSub, v1 } = require("@google-cloud/pubsub");
+import { PubSub, v1 } from '@google-cloud/pubsub';
 const pubSubClient = new PubSub();
 const pubSubClient2 = new v1.PublisherClient();
 // const topicName = "orders_topic";
 
-const pubsubRepository = require("../repositories/mq-manager");
+import  pubsubRepository from '../repositories/mq-manager.js';
 
 const { publishMessage } = pubsubRepository;
 
-module.exports = {
+export default {
     publishRequest: async (req, res) => {
         console.log('got it ', req.body)
         let {data,topicName} = req.body;

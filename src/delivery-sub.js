@@ -1,7 +1,7 @@
-import express from 'express';
+// import express from 'express';
 // const morgan = require('morgan');
 // const bodyParser = require('body-parser');
-require('dotenv').config();
+// require('dotenv').config();
 // const app = express();
 const deliveriesRoute = require('./routes/delivery.js');
 // const helmet = require('helmet');
@@ -14,7 +14,8 @@ const deliveriesRoute = require('./routes/delivery.js');
 
 // app.use(helmet());
 // app.use(cors());
-app.use('/api/delivery', deliveriesRoute);
+
+
 
 
 

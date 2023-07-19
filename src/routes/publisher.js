@@ -1,8 +1,12 @@
-const express = require('express');
-const router = express();
-const ordersController = require("../controllers/publisher-controller");
+import express from 'express';
+const router = express.Router();
 
+import ordersController from "../controllers/publisher-controller.js";
 
+router.get('/', (req, res) => {
+    res.send('you have  come to zogi\'s message broker');
+
+})
 router.post("/publish-request", ordersController.publishRequest);
 
-module.exports = router;
+export default router;

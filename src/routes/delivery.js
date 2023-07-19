@@ -1,9 +1,9 @@
-const express = require('express');
-const router = express();
-const deliveryController = require("../controllers/delivery-controller");
+import express from 'express';
+const deliveriesRoutes = express.Router();
+import deliveryController from "../controllers/delivery-controller.js";
 
 
-router.get("/", deliveryController.deliveryHome);
-router.post("/pull", deliveryController.pullDelivery);
+deliveriesRoutes.get("/", deliveryController.deliveryHome);
+deliveriesRoutes.post("/pull", deliveryController.pullDelivery);
 
-module.exports = router;
+export default  deliveriesRoutes;
