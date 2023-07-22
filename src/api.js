@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import  publisherRoutes  from './routes/publisher.js' 
 import  deliveriesRoutes  from './routes/delivery.js' 
+import  testsRoutes  from './routes/dummyReqs.js' 
 
 export const app = express();
 
@@ -28,4 +29,6 @@ api.get('/hello', (req, res) => {
 app.use('/api/v1', api);
 app.use('/api/v1/publisher', publisherRoutes);
 app.use('/api/v1/delivery', deliveriesRoutes);
+app.use('/api/v1', testsRoutes);
+
 
